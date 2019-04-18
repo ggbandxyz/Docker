@@ -22,6 +22,7 @@ RUN apk upgrade \
     python \
     python-dev \
     py-pip \
-    mysql-dev \
-    build-base \
-  && pip install Flask \ 
+  && pip install shadowsocks==2.8.2 \ 
+
+CMD["-c","/etc/shadowsocks.json"]
+ENTRYPOINT ["/usr/local/bin/ssserver"]
